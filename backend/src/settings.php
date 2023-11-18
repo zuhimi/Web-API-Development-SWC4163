@@ -14,7 +14,7 @@ return [
     // Database connection settings
     "db" => [
     "host" => "localhost",
-    "dbname" => "project_web",
+    "dbname" => "management",
     "user" => "root",
     "pass" => "",
     ]

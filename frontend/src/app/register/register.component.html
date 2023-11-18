@@ -1,0 +1,42 @@
+<div id="outPopUp" class="">
+    <div class="">
+  
+        <!--to show error alert-->
+        <div *ngIf="errormsg" class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>{{errormsg}}</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+  
+          <!--to show success alert-->
+          <div *ngIf="successmsg" class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>{{successmsg}}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          <div align="center">
+            <img  src="assets/register.png" style="height: 100px;">
+            <br>
+           
+      <br><br>
+        <form  [formGroup]="registerForm" >
+          <div  class="col-lg-4 mx-auto" >
+            <input type="text" class="form-control" formControlName="shop_name" placeholder="Shop Name">
+          </div>
+          <br>
+          <div class="col-lg-4 mx-auto">
+            <input type="text" class="form-control" formControlName="shop_email" placeholder="Shop Email">
+          </div>
+          <br>
+          <div class="col-lg-4 mx-auto">
+            <input type="text" class="form-control"  formControlName="shop_no" placeholder="Shop Phone Number">
+          </div>
+
+          <br>
+          <div align="center" class="col-lg-15 mt-2" *ngIf="!getparamid" (click)="studentsubmit()">
+      <button>Add Shop</button>
+          </div>
+  
+        </form>
+  
+      </div>
+    </div>
+  </div>

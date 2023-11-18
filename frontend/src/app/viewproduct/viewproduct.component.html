@@ -1,0 +1,43 @@
+<div class="container">
+
+    <!-- Show message alert for delete -->
+    <div *ngIf="successmsg" class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>{{successmsg}}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <div align="center">
+      <img src="/assets/product.png" style="height: 95px;">
+      <br><br>
+      <table class="table">
+        <thead>
+          <tr>
+            <td align="center" scope="col">NO.</td>
+            <td align="center" scope="col">PRODUCT ID</td>
+            <td align="center" scope="col">PRODUCT NAME</td>
+            <td align="center" scope="col">PRODUCT BRAND</td>
+            <td align="center" scope="col">PRICE</td>
+  
+            <td scope="col"></td>
+            <td scope="col"></td>
+  
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let us of listData'>
+            <td align="center" scope="row">{{us.id}}</td>
+            <td align="center">{{us.product_id}}</td>
+            <td align="center">{{us.product_name}}</td>
+            <td align="center">{{us.product_brand}}</td>
+            <td align="center">{{us.price}}</td>
+  
+            <td></td>
+            <td>
+              <button (click)="deleteId(us.id)">remove</button>
+              &nbsp;
+              <button [routerLink]="['/updateproduct', us.id]">edit</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

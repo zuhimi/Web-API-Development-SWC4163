@@ -1,0 +1,44 @@
+<div id="outPopUp" class="">
+    <div class="">
+  
+        <!-- To show error alert -->
+        <div *ngIf="errormsg" class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>{{errormsg}}</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+  
+          <!-- To show success alert -->
+          <div *ngIf="successmsg" class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>{{successmsg}}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          <div align="center">
+            <img  src="/assets/update.png" style="height: 75px;">
+            <br><br>
+        <form  [formGroup]="productForm" >
+          <div class="col-lg-4 mx-auto" >
+            <input type="text" class="form-control" formControlName="product_id" placeholder="Product ID">
+          </div>
+          <br>
+          <div class="col-lg-4 mx-auto">
+            <input type="text" class="form-control" formControlName="product_name" placeholder="Product Name">
+          </div>
+          <br>
+          <div class="col-lg-4 mx-auto">
+            <input type="text" class="form-control"  formControlName="product_brand" placeholder="Product Brand">
+          </div>
+          <br>
+          <div class="col-lg-4 mx-auto">
+            <input type="text" class="form-control"  formControlName="price" placeholder="Price">
+          </div>
+          <br>
+          <!-- Remove Student Intake -->
+          <div align="center" class="col-lg-15 mt-2" *ngIf="!getparamid" (click)="productupdate()">
+            <button>Confirm Update</button>
+          </div>
+  
+        </form>
+  
+      </div>
+    </div>
+  </div>
